@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- LinkedIn Profile Link -->
+            <a href="https://www.linkedin.com/in/rene-naidoo-1a68002a1" target="_blank">
+                <img src="linkedin image.jpg" alt="LinkedIn Profile" class="linkedin-icon">
+            </a>
+
+            <!-- Navigation Menu -->
+            <ul>
+                 <!-- Dark / Light Mode Toggle Button -->
+                <button id="theme-toggle" class="theme-btn">🌙</button>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+             
+        
+    </header>
+
+    <section class="container">
+        <!-- About Me Section -->
+        <h2 class="section-title"><u>About Me</u></h2>
+        <a href="RENE NAIDOO CV.pdf" download class="cv-btn">Download CV ⬇️</a> 
+        <p style="text-align: center;">
+            I’m a final-year BSc IT student with a passion for web development and creating digital experiences that are both functional and visually appealing. I enjoy building responsive, user-friendly applications that solve real problems, and I love exploring new technologies to bring fresh ideas to life. My goal is to combine creativity and technical skills to develop projects that make an impact and stand out in the digital world. 
+        </p>
+        <br>
+
+        <!-- Education Section -->
+        <section class="education">
+            <h2><u>Education</u></h2>
+            <ul>
+                <li style="text-align:center;">🎓 High School - Earlington Secondary School (Bachelor's Pass) (2019-2023)</li>
+                <li style="text-align:center;">🎓 Bachelor of Science in Information Technology - Richfield Graduate Institute of Technology (2024-2026)</li>
+            </ul>
+        </section>
+        <br>
+
+        <!-- Skills Section -->
+        <h2><u>Skills</u></h2>
+        <div class="skills-container">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">PHP</div>
+            <div class="skill-card">C++</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Web Development</div>
+            <div class="skill-card">Time Management</div>
+            <div class="skill-card">Debugging</div>
+            <div class="skill-card">Validation</div>
+            <div class="skill-card">Problem Solving</div>
+            <div class="skill-card">Easily Adaptable</div>
+        </div>
+        <br>
+
+        <!-- Experience Section -->
+        <section class="experience">
+            <h2><u>Experience</u></h2>
+            <ul>
+                <li style="text-align:center;">Future Interns (Feb 2026-Present)</li>
+            </ul>
+        </section>
+        <br>
+
+        <!-- Interests Section -->
+        <section class="interests">
+            <h2><u>Interests</u></h2>
+            <ul>
+                <li style="text-align: center;">📚 Learning New Technologies</li>
+                <li style="text-align: center;">🧠 Problem-solving and logical thinking challenges</li>
+                <li style="text-align: center;">🏋️‍♂️ Fitness and maintaining a healthy lifestyle</li>
+                <li style="text-align: center;">🌍 Exploring new ideas and technologies</li>
+                <li style="text-align: center;">🎵 Listening to music and discovering new artists</li>
+            </ul>
+        </section>
+
+    </section> <!-- Close container section -->
+
+    <!-- Footer at the bottom of the page -->
+    <footer>
+        <!-- Copyright text -->
+        <p>@2026 Rene Naidoo | All rights reserved.</p>
+    </footer>
+
+    <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Check saved theme on page load
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "🌙";
+        }
+    });
+</script>
+
+</body>
+</html>

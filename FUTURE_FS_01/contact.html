@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- LinkedIn Profile Link -->
+            <a href="https://www.linkedin.com/in/rene-naidoo-1a68002a1" target="_blank">
+                <img src="linkedin image.jpg" alt="LinkedIn Profile" class="linkedin-icon">
+            </a>
+
+            <!-- Navigation Menu -->
+            <ul>
+                 <!-- Dark / Light Mode Toggle Button -->
+                <button id="theme-toggle" class="theme-btn">🌙</button>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <!-- Form Section Wrapper -->
+    <div class="form-wrapper">
+        <!-- Profile image -->
+        <img src="new.png" alt="Rene Naidoo" class="profile-img">
+
+        <!-- Contact Form Fieldset -->
+        <fieldset>
+            <!-- Legend for form -->
+            <legend style="text-align: center; color: black;">CONTACT US</legend>
+
+            <!-- Intro Text -->
+            <!-- Issue: <strong> tag not closed properly and nested incorrectly -->
+            <p style="font-style: italic; font-family: cursive; margin-top: -10px; color:blueviolet;">
+                <strong>I'd like to hear from you!</strong>
+            </p>
+
+            <!-- Email Display -->
+            <p>Email: renenaidoo0103@gmail.com</p>
+
+            <!-- Breaks are okay here, but could be handled better in CSS -->
+            <br>
+
+            <!-- Start of Form -->
+            <!-- Issue: form had no action attribute, so it won’t send data anywhere -->
+            <form action="#" method="post">
+                <!-- Full Name Field -->
+                <label for="fullname">Full Name: </label><br>
+                <input type="text" name="fullname" id="fullname" value=""><br><br>
+
+                <!-- Email Field -->
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" value=""><br><br>
+                <!-- Issue: changed type="text" to type="email" for proper validation -->
+
+                <!-- Message Field -->
+                <label for="message">Leave a Message:</label><br>
+                <textarea name="message" id="message" rows="5" cols="50"></textarea><br><br>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Send</button>
+            </form>
+
+        </fieldset>
+    </div>
+
+    <!-- Footer at the bottom of the page -->
+    <footer>
+        <!-- Copyright text -->
+        <p>@2026 Rene Naidoo | All rights reserved.</p>
+    </footer>
+
+    <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Check saved theme on page load
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "🌙";
+        }
+    });
+</script>
+</body>
+</html>

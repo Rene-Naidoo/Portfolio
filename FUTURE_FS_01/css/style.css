@@ -1,0 +1,465 @@
+/* ===================================== */
+/* GLOBAL / ALL PAGES */
+/* ===================================== */
+
+/* Reset default browser styles for all elements */
+* {
+    margin: 0;               /* remove the browser's default margin */
+    padding: 0;              /* remove the browser's default padding */
+    box-sizing: border-box;  /* include padding and border in element's total width/height */
+    font-family: Arial, Helvetica, sans-serif; /* default font for all text */
+}
+
+/* Ensure html and body fill the viewport */
+html, body {
+    height: 100%;            /* make the page at least as tall as the screen */
+}
+
+/* Body styling for all pages */
+body {
+    display: flex;            /* use flex layout to easily push footer to bottom */
+    flex-direction: column;   /* content flows vertically (top to bottom) */
+    line-height: 1.6;         /* space between lines of text */
+    color: #fff;              /* default text color: white */
+    font-family: Arial, Helvetica, sans-serif; /* default font */
+
+    background-image: url("background.jpg"); /* page background image */
+    background-size: cover;      /* stretch image to cover entire background */
+    background-position: center; /* center the image */
+    background-repeat: no-repeat;/* do not repeat the image */
+    min-height: 100vh;           /* ensure body takes at least full viewport height */
+}
+
+/* Header styling for all pages */
+header {
+    background: #111;      /* dark background color */
+    padding: 15px 0;       /* vertical padding above and below content */
+}
+
+/* Navigation bar styling */
+nav {
+    width: 90%;                    /* width of nav content relative to page */
+    margin: auto;                  /* center nav horizontally */
+    display: flex;                 /* flex layout for logo and menu links */
+    justify-content: space-between;/* push logo to left and links to right */
+    align-items: center;           /* vertically align items */
+}
+
+/* Logo text in nav */
+nav h1 {
+    color: #fff;                  /* white text for logo/title */
+}
+
+/* Navigation menu list */
+nav ul {
+    margin-left: auto;           /* push menu items to the right */
+    list-style: none;            /* remove bullets from list */
+    display: flex;               /* display menu horizontally */
+    gap: 20px;                   /* space between each menu item */
+}
+
+/* Navigation links styling */
+nav ul li a {
+    color: #fff;                /* white text for links */
+    text-decoration: none;      /* remove underline from links */
+    font-weight: 500;           /* medium font weight */
+}
+
+/* Hover effect for navigation links */
+nav ul li a:hover {
+    color: #00bcd4;             /* change color to light blue when hovering */
+}
+
+/* Footer styling applied to all pages */
+footer {
+    background: #111;           /* dark footer background */
+    color: #fff;                /* white text */
+    text-align: center;         /* center the text horizontally */
+    padding: 15px 0;            /* vertical padding */
+    margin-top: 40px;           /* space above the footer from content */
+}
+
+/* Mobile responsiveness for navigation */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;  /* stack links vertically on small screens */
+        gap: 10px;               /* smaller spacing between links */
+        align-items: center;     /* center links horizontally */
+    }
+}
+
+/* ===================================== */
+/* HOME PAGE STYLES */
+/* ===================================== */
+
+/* Container holding home text and image */
+.home-content {
+    display: flex;                   /* horizontal layout for text + image */
+    align-items: center;             /* vertically center text and image */
+    justify-content: space-between;  /* space between text and image */
+    gap: 40px;                       /* spacing between text and image */
+}
+
+/* Text section in home page */
+.home-text {
+    max-width: 500px;                /* restrict width for readability */
+    text-align: right;               /* align text to the right */
+}
+
+/* Paragraphs in home text */
+.home-text p {
+    color: #fff;                     /* white text to be visible on background */
+}
+
+/* Section heading styling for home page */
+.section-title {
+    font-size: 32px;                 /* large font size */
+    margin-bottom: 20px;             /* space below heading */
+}
+
+/* Button styling for home page */
+.btn {
+    display: inline-block;           /* inline element with block-like width/height */
+    padding: 10px 20px;              /* inner spacing */
+    background: #00bcd4;             /* button background color */
+    color: #fff;                      /* text color white */
+    text-decoration: none;            /* remove underline */
+    border-radius: 5px;               /* rounded corners */
+    font-weight: 500;                 /* medium font weight */
+}
+
+/* Hover effect for home page buttons */
+.btn:hover {
+    background: #0097a7;             /* change to darker blue on hover */
+}
+
+/* Profile image on home page */
+.profile-img {
+    width: 300px;                     /* image width */
+    height: 350px;                    /* image height */
+    object-fit: cover;                /* keep aspect ratio, crop if needed */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* subtle shadow for depth */
+}
+
+/* ===================================== */
+/* ABOUT PAGE STYLES */
+/* ===================================== */
+
+/* Container for skills grid */
+.skills-container {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 20px;                             /* spacing between cards */
+  padding: 20px;                         
+  justify-content: center;               /* center the grid */
+}
+
+/* Individual skill cards */
+.skill-card {
+  background-color: #dc9cc5;  /* pink card background */
+  color: #333;                /* dark text */
+  padding: 20px 30px;         /* internal spacing */
+  border-radius: 10px;        /* rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* subtle shadow */
+  font-weight: bold;           /* bold text */
+  text-align: center;         /* center text */
+  cursor: pointer;             /* pointer cursor when hovering */
+  transition: transform 0.3s, box-shadow 0.3s; /* smooth hover animation */
+}
+
+/* Hover effect for skill cards */
+.skill-card:hover {
+  transform: translateY(-10px);        /* move card up slightly */
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2); /* larger shadow on hover */
+  background-color: #f0f0f0;           /* lighten background on hover */
+}
+
+/* Education list container */
+.edu-list {
+    list-style: none;        /* remove bullets */
+    padding: 0;              
+    text-align: center;      /* center the list items */
+}
+
+/* Individual education item */
+.edu-list li {
+    display: inline-flex;     /* horizontal layout for icon + text */
+    align-items: center;      /* vertical alignment */
+    gap: 8px;                 /* space between icon and text */
+    margin: 10px 0;           /* spacing between list items */
+}
+
+/* Download CV button */
+.cv-btn {
+    display: block;           
+    margin: 20px auto;        /* center horizontally */
+    width: 8cm;              
+    padding: 19px 0;          /* vertical padding */
+    text-align: center;       
+    font-size: 12px;          
+    background-color: #b515c7;/* purple background */
+    color: #fff;              /* white text */
+    text-decoration: none;    
+    border-radius: 4px;       
+    font-weight: bold;        
+    transition: background 0.3s, transform 0.2s; /* smooth hover */
+}
+
+.cv-btn:hover {
+    background-color: #9e13ad; /* darker purple on hover */
+    transform: scale(1.05);    /* slight zoom effect */
+}
+
+/* ===================================== */
+/* CONTACT PAGE STYLES */
+/* ===================================== */
+
+/* Container wrapping contact form and profile image */
+.form-wrapper {
+    display: flex;              
+    align-items: center;        /* vertical alignment */
+    gap: 30px;                  /* spacing between image and form */
+    margin-top: 60px;           /* space from top */
+}
+
+/* Profile image in contact page */
+.form-wrapper img {
+    margin-left: 150px;        /* move image slightly to right */
+}
+
+/* Fieldset for contact form */
+fieldset {
+    width: 500px;       
+    height: 500px;
+    margin-left: 20%;           /* position form slightly right */
+    padding-top: 50px;          /* spacing inside form */
+    color: black;               /* text color */
+    text-align: center;         
+}
+
+/* Social / LinkedIn links */
+.social-links {
+    display: flex;             
+    justify-content: center;   /* center horizontally */
+    margin-top: 20px;          
+    width: 100%;               
+}
+
+/* LinkedIn icon */
+.linkedin-icon {
+    width: 35px;               
+    height: 35px;
+    cursor: pointer;           /* cursor changes to pointer */
+    transition: transform 0.3s; /* smooth hover effect */
+}
+
+.linkedin-icon:hover {
+    transform: scale(1.1);     /* zoom slightly on hover */
+}
+
+/* Submit button for contact form */
+.btn {
+    background-color: #a7598b;  /* purple background */
+    color: #fff;                /* white text */
+    border: none;               /* remove default border */
+    padding: 10px 20px;         
+    font-weight: bold;           
+    border-radius: 5px;         /* rounded corners */
+    cursor: pointer;           
+    transition: background 0.3s; /* smooth hover */
+}
+
+.btn:hover {
+    transform: scale(1.1);      /* zoom slightly on hover */
+    background-color: #8b4d84;  /* darker purple on hover */
+}
+
+/* ===================================== */
+/* GENERAL HEADINGS AND CONTAINER STYLES */
+/* ===================================== */
+
+/* Main container for page content */
+.container {
+    width: 90%;              /* 90% of viewport width */
+    margin: auto;            /* center horizontally */
+    padding: 40px 0;         /* vertical padding */
+    flex: 1;                 /* take remaining vertical space */
+    position: relative;      /* needed for overlay positioning */
+}
+
+/* Overlay to make background image darker for readability */
+.container::before {
+    content: "";             
+    position: absolute;      
+    inset: 0;                /* cover entire container */
+    background: rgba(0,0,0,0.5); /* semi-transparent black overlay */
+    z-index: 0;             /* behind container content */
+}
+
+/* Ensure container content stays above overlay */
+.container > * {
+    position: relative;      
+    z-index: 1;             
+}
+
+/* Center all headings on all pages */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;     
+}
+
+/* ===================================== */
+/* LIGHT MODE STYLES */
+/* ===================================== */
+
+body.light-mode {
+    color: #111;                  /* dark text */
+}
+
+body.light-mode header,
+body.light-mode footer {
+    background: #ffffff;          /* white header/footer */
+    color: #111;
+}
+
+body.light-mode nav ul li a {
+    color: #111;                  /* dark nav links */
+}
+
+body.light-mode .container::before {
+    background: rgba(255,255,255,0.6); /* light overlay */
+}
+
+body.light-mode .home-text p {
+    color: #111;
+}
+
+body.light-mode .skill-card {
+    background-color: #ffffff;
+    color: #111;
+}
+
+body.light-mode fieldset {
+    background-color: #ffffff;
+}
+
+/* ===================================== */
+/* SMOOTH BLENDED LIGHT MODE FIX */
+/* ===================================== */
+
+/* Smooth transition when switching themes */
+body,
+header,
+footer,
+.container::before {
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Keep background image in light mode */
+body.light-mode {
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #111;
+}
+
+/* Instead of removing image, just change overlay */
+body.light-mode .container::before {
+    background: rgba(255, 255, 255, 0.55); /* soft white blend */
+}
+
+/* Light header + footer but slightly transparent for blend effect */
+body.light-mode header,
+body.light-mode footer {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Light nav text */
+body.light-mode nav h1,
+body.light-mode nav ul li a {
+    color: #111;
+}
+
+/* Adjust paragraph color */
+body.light-mode .home-text p {
+    color: #111;
+}
+
+/* Light skill cards */
+body.light-mode .skill-card {
+    background-color: rgba(255,255,255,0.9);
+    color: #111;
+}
+
+/* ===================================== */
+/* PROJECTS PAGE STYLING */
+/* ===================================== */
+
+/* Container spacing */
+.projects-container {
+    display: grid;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Project card box */
+/* Dark mode (default) */
+.project-card {
+    background: rgba(0, 0, 0, 0.7);  /* dark background for dark mode */
+    color: #fff;                     /* white text for dark mode */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s ease, color 0.4s ease;
+}
+
+/* Light mode project cards */
+body.light-mode .project-card {
+    background: rgba(255, 255, 255, 0.9); /* light background */
+    color: #111;                          /* dark text */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Hover effect */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+/* Project headings and text */
+.project-card h3,
+.project-card p {
+    color: inherit; /* automatically matches card color */
+    margin-bottom: 10px;
+}
+
+/* Links styling */
+.project-card a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* View Code link */
+.project-card a:first-of-type {
+    color: #00bcd4;   /* blue */
+}
+
+/* Live Demo link */
+.project-card a:last-of-type {
+    color: #ff4081;   /* pink */
+}
+
+/* Hover effect on links */
+.project-card a:hover {
+    opacity: 0.8;
+}
+
+/*to keep the footer down*/
+.projects-page {
+    min-height: calc(100vh - 100px); /* adjust 100px depending on header height */
+    display: flex;
+    flex-direction: column;
+}

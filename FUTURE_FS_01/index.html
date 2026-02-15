@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Tells the browser this is an HTML5 document -->
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title shown in the browser tab -->
+    <title>Rene Naidoo | Portfolio</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+
+    <!-- Header section at the top of the page -->
+    <header>
+        <nav>
+            <!-- Your name / logo -->
+            <h1>Rene Naidoo</h1>
+            
+            <!-- Navigation menu -->
+            <ul>
+                 <!-- Dark / Light Mode Toggle Button -->
+                <button id="theme-toggle" class="theme-btn">🌙</button>
+
+
+                <!-- Each link goes to a different page -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            
+        </nav>
+    </header>
+
+    <!-- Main content container -->
+    <section class="container">
+        <div class="home-content">
+
+            <!-- Profile image -->
+            <img src="new.png" alt="Rene Naidoo" class="profile-img">
+
+            <!-- Text content on the home page -->
+            <div class="home-text">
+
+                <!-- Greeting heading -->
+                <h2 style="text-align: right;" class="section-title">Hi, I'm Rene 👋</h2>
+
+                <!-- Short introduction paragraph -->
+                <p>
+                    I’m a final-year BSc IT student specializing in creating clean, responsive, and user-focused web applications. I’m passionate about turning ideas into intuitive digital experiences and continuously learning the latest technologies to deliver impactful solutions.
+                </p>
+
+                <!-- Space between text and button -->
+                <br>
+
+                <!-- Button that links to projects page -->
+                <a href="projects.html" class="btn">View My Projects</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer at the bottom of the page -->
+    <footer>
+        <!-- Copyright text -->
+        <p>@2026 Rene Naidoo| All rights reserved.</p>
+    </footer>
+
+    <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    // Check saved theme on page load
+    if (localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("light-mode");
+
+        if (body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "🌙";
+        }
+    });
+</script>
+
+
+</body>
+</html>

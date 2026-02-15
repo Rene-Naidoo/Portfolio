@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rene Naidoo | Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <h1>Rene Naidoo</h1>
+            <ul>
+                 <!-- Dark / Light Mode Toggle Button -->
+                <button id="theme-toggle" class="theme-btn">🌙</button>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        
+        </nav>
+    </header>
+
+    <!-- Main Projects Section -->
+    <main class="projects-page">
+        <h2 class="section-title">My Projects</h2>
+        
+        <div class="projects-container">
+
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>Below are some of the projects I have developed, showcasing my skills in front-end and back-end web development. 
+    Each project highlights my ability to build responsive, functional, and user-focused applications using modern technologies.</p>
+                <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+                <a href="https://github.com/Rene-Naidoo/portfolio" target="_blank">View Code</a> |
+                <a href="https://yourusername.github.io/portfolio" target="_blank">Live Demo</a>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <h3>MyEvents Page</h3>
+                <p>
+                    This project is a web-based application developed as part of the Internet Programming course. 
+                    It demonstrates the use of HTML, CSS, JavaScript, PHP, and MySQL to create a responsive and interactive website.
+                </p>
+                <p>
+                    The website includes structured layouts, theme customization (light and dark modes), 
+                    and interactive features to enhance user experience.
+                </p>
+                <p><strong>Tech Stack:</strong> HTML, CSS, PHP, MySQL</p>
+                <a href="https://github.com/Rene-Naidoo/MyEvent" target="_blank">View Code</a> |
+                <a href="#" target="_blank">Live Demo</a>
+            </div>
+
+        </div> <!-- CLOSE projects-container -->
+
+    </main> <!-- CLOSE main -->
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Rene Naidoo | All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        // Check saved theme on page load
+        if (localStorage.getItem("theme") === "light") {
+            body.classList.add("light-mode");
+            toggleBtn.textContent = "☀️";
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("light-mode");
+
+            if (body.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+                toggleBtn.textContent = "☀️";
+            } else {
+                localStorage.setItem("theme", "dark");
+                toggleBtn.textContent = "🌙";
+            }
+        });
+    </script>
+
+</body>
+</html>
